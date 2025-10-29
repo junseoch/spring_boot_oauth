@@ -3,8 +3,8 @@ package com.app.oauth.exception;
 import lombok.NoArgsConstructor;
 
 @NoArgsConstructor
-public class JwtTokenException extends RuntimeException {
-    public JwtTokenException(String message) {
+public class MemberException  extends RuntimeException{
+    public MemberException(String message){
         super(message);
     }
 }

@@ -8,10 +8,7 @@ import java.util.List;
 @Mapper
 public interface MemberSocialMapper {
 
-
     public void insert(MemberSocialVO memberSocialVO);
     public List<String> selectAll(Long id);
-
-
 
 }

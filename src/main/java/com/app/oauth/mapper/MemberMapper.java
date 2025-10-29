@@ -10,7 +10,6 @@ import java.util.Optional;
 @Mapper
 public interface MemberMapper {
 
-    //
     public Optional<MemberVO> select(Long id);
 
     // id로 멤버 이메일 조회

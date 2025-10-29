@@ -9,4 +9,5 @@ public interface MemberSocialService {
     public void register(MemberSocialVO memberSocialVO);
     public List<String> findAllProvidersById(Long id);
 
+
 }

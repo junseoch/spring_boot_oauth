@@ -1,6 +1,8 @@
 package com.app.oauth.service;
 
 import com.app.oauth.domain.dto.MemberResponseDTO;
+import com.app.oauth.domain.vo.MemberInsertSocialVO;
+import com.app.oauth.domain.vo.MemberSocialVO;
 import com.app.oauth.domain.vo.MemberVO;
 
 import java.util.Map;
@@ -20,7 +22,7 @@ public interface MemberService {
     public Map<String, String> register(MemberVO memberVO);
 
     // 회원 가입(소셜 로그인)
-    public Map<String, String> registerSocial(MemberVO memberVO);
+    public Map<String, String> registerSocial(MemberInsertSocialVO memberInsertSocialVO , MemberSocialVO memberSocialVO);
 
     // 회원 수정
     public void modify(MemberVO memberVO);
