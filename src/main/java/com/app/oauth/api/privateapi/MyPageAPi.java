@@ -13,6 +13,9 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/private/my-page/*")
 public class MyPageAPi {
 
+
+
+
     @PostMapping("private-test")
     public void privateTest(Authentication authentication) {
         log.info(authentication.getPrincipal().toString());

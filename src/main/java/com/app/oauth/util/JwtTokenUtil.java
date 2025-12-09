@@ -36,7 +36,9 @@ public class JwtTokenUtil {
     public String generateRefreshToken(Map<String, String> claims) {
         String memberEmail = claims.get("memberEmail");
 
-        Long expirationTimeInMillis =  1000 * 60 * 30 * 24L;
+//        Long expirationTimeInMillis =  1000 * 60 * 30 * 24L;
+        Long expirationTimeInMillis =  1000 * 60L;
+
         Date expirationDate = new Date(System.currentTimeMillis() + expirationTimeInMillis);
 
         return Jwts.builder()

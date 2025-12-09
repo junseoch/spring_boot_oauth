@@ -10,7 +10,7 @@
     <select id="selectAll" resultType="String" parameterType="Long">
         SELECT MEMBER_SOCIAL_PROVIDER
         FROM TBL_MEMBER_SOCIAL
-        WHERE ID = #{id}
+        WHERE MEMBER_ID = #{id}
     </select>
 
 </mapper>

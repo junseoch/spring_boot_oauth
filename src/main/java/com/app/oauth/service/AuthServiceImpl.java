@@ -106,7 +106,12 @@ public class AuthServiceImpl implements AuthService {
     @Override
     public String reissueAccessToken(TokenDTO tokenDTO) {
         Map<String,String> claim = new HashMap<>();
-        Long id =  tokenDTO.getMemberId();
+        // 토큰에서 email을 가져온다.
+        String memberEmail =  (String) jwtTokenUtil.getMemberEmailFromToken(tokenDTO.getRefreshToken()).get("memberEmail");
+        Long id = memberDAO.findIdByMemberEmail(memberEmail);
+        tokenDTO.setMemberId(id);
+
+        log.info("memberEmail: {}",memberEmail);
 
         // 1. 기존 RefreshToken 또는 AccessToken 블랙리스트인지 확인
         if(isBlackedRefreshToken(tokenDTO)) {

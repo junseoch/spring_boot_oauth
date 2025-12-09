@@ -45,6 +45,7 @@ public class SecurityConfig {
                             if(session != null) {
                                 session.invalidate();
                             }
+                            // 리프레쉬 토큰을 블랙리스트에 추가
                             response.sendRedirect("http://localhost:3000");
                         })
                         .permitAll()
@@ -61,7 +62,7 @@ public class SecurityConfig {
         configuration.addAllowedOrigin("http://localhost:3000"); // React 앱 주소
         configuration.addAllowedMethod("*"); // 모든 HTTP 메서드 허용
         configuration.addAllowedHeader("*"); // 모든 요청 헤더 허용
-        configuration.setAllowCredentials(true); // 인증 정보 허용
+        configuration.setAllowCredentials(true); // 인증 정보 허용 - cookie 허용
 
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
         source.registerCorsConfiguration("/**", configuration); // 모든 경로에 적용
